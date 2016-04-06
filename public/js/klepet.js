@@ -18,6 +18,15 @@ Klepet.prototype.prikaziSliko = function(kanal, slika) {
   this.socket.emit('slika', sporocilo);
 };
 
+Klepet.prototype.prikaziVideo = function(kanal, video) {
+  var sporocilo = {
+    kanal: kanal,
+    video: video
+  };
+  this.socket.emit('video', sporocilo);
+}
+
+
 Klepet.prototype.spremeniKanal = function(kanal) {
   this.socket.emit('pridruzitevZahteva', {
     novKanal: kanal
